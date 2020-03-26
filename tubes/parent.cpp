@@ -1,1 +1,3 @@
 #include "parent.h"
+
+chara
