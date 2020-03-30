@@ -1,23 +1,24 @@
 #include "child.h"
-#include <iostream>
 
-using namespace std;
-
-address allocate(infotype x){
-    address p = new elmlist;
+address_c allocate(infotype_c x){
+    address_c p = new elmList_c;
     info(p) = x;
     next(p) = NULL;
 
-    return P;
+    return p;
 }
 
-void insertFirst(List &L, address P){
+void createList(List_c &L){
+    first(L) = NULL;
+}
+
+void insertFirst(List_c &L, address_c P){
     next(P) = first(L);
     first(L) = P;
 }
 
-void insertLast(List &L, address P){
-    address Q;
+void insertLast(List_c &L, address_c P){
+    address_c Q;
     Q = first(L);
     while(next(Q) != NULL){
         Q = next(Q);
@@ -25,14 +26,14 @@ void insertLast(List &L, address P){
     }
 }
 
-void insertAfter(List &L, address Prec, address P){
+void insertAfter(List_c &L, address_c Prec, address_c P){
     if(Prec != NULL){
         next(P) = next(Prec);
         next(Prec) = P;
     }
 }
 
-void deleteFirst(List &L, address &P){
+void deleteFirst(List_c &L, address_c &P){
     if (first(L) != NULL ){
         P = first(L);
         first(L) = next(P);
@@ -40,8 +41,8 @@ void deleteFirst(List &L, address &P){
         next(P) = NULL;
     }
 }
-void deleteLast(List &L, address &P){
-    address Q;
+void deleteLast(List_c &L, address_c &P){
+    address_c Q;
     if (first(L) = NULL){
         cout<<"Empty"<<endl;
     } else if(next(first(L)) = NULL){
@@ -55,14 +56,14 @@ void deleteLast(List &L, address &P){
 
 }
 
-void deleteAfter(List &L, address Prec, address P){
+void deleteAfter(List_c &L, address_c Prec, address_c P){
     P = next(Prec);
     next(Prec) = next(P);
     next(P) = NULL;
 }
 
-void printInfo(List L){
-    address p = first(L);
+void printInfo(List_c L){
+    address_c p = first(L);
     while(p != NULL){
         cout<<info(p)<<", ";
         p = next(p);
