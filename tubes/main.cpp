@@ -1,9 +1,15 @@
-#include <iostream>
-
-using namespace std;
+#include "parent.h"
+#include "child.h"
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    List_p Kota;
+    createList(Kota);
+    insertKota(Kota);
+    insertKota(Kota);
+    printInfo(Kota);
+    insertKota(Kota);
+    printInfo(Kota);
+    insertKota(Kota);
+    printInfo(Kota);
 }
