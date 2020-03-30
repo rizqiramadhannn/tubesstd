@@ -8,23 +8,22 @@
 #define info(P) P->info
 using namespace std;
 
-typedef int infotype_p;
+typedef string infotype_p;
 typedef struct elmList_p *address_p;
 
 struct elmList_p{
     infotype_p info;
     address_p next;
+    address_p prev;
 };
 
 struct List_p{
     address_p first;
+    address_p last;
 };
 
-address_p allocate(infotype_p x);
-void createList(List_c &P);
-void insertFirst(List_p &L, address_p P);
-void insertLast(List_p &L, address_p P);
-void insertAfter(List_p &L, address_p Prec, address_p P);
+void insertKota(List_p &L);
+void createList(List_p &P);
 void deleteFirst(List_p &L, address_p &P);
 void deleteLast(List_p &L, address_p &P);
 void deleteAfter(List_p &L, address_p Prec, address_p P);
