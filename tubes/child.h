@@ -6,26 +6,27 @@
 #define info(P) P->info
 using namespace std;
 
-typedef int infotype;
-typedef struct elmlist *address;
+typedef string infotype_c;
+typedef struct elmList_c *address_c;
 
-struct elmlist{
-    infotype info;
-    address next;
+struct elmList_c{
+    infotype_c info;
+    address_c next;
 };
 
-struct List{
-    address first;
+struct List_c{
+    address_c first;
 };
 
-address allocate(infotype x);
-void insertFirst(List &L, address P);
-void insertLast(List &L, address P);
-void insertAfter(List &L, address Prec, address P);
-void deleteFirst(List &L, address &P);
-void deleteLast(List &L, address &P);
-void deleteAfter(List &L, address Prec, address P);
-void printInfo(List L);
+address_c allocate(infotype_c x);
+void createList(List_c &L);
+void insertFirst(List_c &L, address_c P);
+void insertLast(List_c &L, address_c P);
+void insertAfter(List_c &L, address_c Prec, address_c P);
+void deleteFirst(List_c &L, address_c &P);
+void deleteLast(List_c &L, address_c &P);
+void deleteAfter(List_c &L, address_c Prec, address_c P);
+void printInfo(List_c L);
 
 
 #endif // CHILD_H_INCLUDED
