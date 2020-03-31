@@ -37,6 +37,39 @@ void insertJalan(List_c &L){
     }
 }
 
+void deleteJalan(List_c &L){
+    if(first(L) == NULL){
+        cout << "Tidak ada data" << endl;
+    } else {
+        printInfo(L);
+        string hapus;
+        cout << "Masukkan nama jalan yang akan dihapus : ";
+        cin >> hapus;
+        address_c P;
+        if (info(first(L)) == hapus){
+            P = first(L);
+            first(L) = NULL;
+            if  (first(L) = next(P)){
+                next(P) = NULL;
+            }
+        } else {
+            address_c Q = first(L);
+            do {
+                Q = next(Q);
+            } while (Q != first(L) && info(next(Q)) != hapus);
+            if (Q == first(L)){
+                cout << "Nama jalan tidak ada dalam data" << endl;
+                cout << "Kembali ke menu" << endl;
+            } else {
+                P = next(Q);
+                next(Q) = next(P);
+                next(P) = NULL;
+            }
+        }
+    }
+}
+
+
 void insertFirst(List_c &L, address_c P){
     next(P) = first(L);
     first(L) = P;
