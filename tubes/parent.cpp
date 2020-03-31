@@ -20,27 +20,27 @@ void insertKota(List_p &L){
         prev(P) = P;
     } else {
         address_p Q = first(L);
-        string key = x.substr(0,1);
-        if (key < info(first(L)).substr(0,1)){
+        if (x < info(first(L))){
             next(P) = first(L);
             prev(first(L)) = P;
             first(L) = P;
             next(last(L)) = P;
             prev(P) = last(L);
-        } else if (key > info(last(L)).substr(0,1)){
+        } else if (x > info(last(L))){
             next(last(L)) = P;
             prev(first(L)) = P;
             prev(P) = last(L);
             next(P) = first(L);
             last(L) = P;
         }else {
-            do {
+            Q = first(L);
+            while (x > info(Q)){
                 Q = next(Q);
-            } while(info(Q).substr(0,1) <= key);
-            next(P) = next(Q);
-            prev(P) = Q;
-            prev(next(Q)) = P;
-            next(Q) = P;
+            }
+            next(P) = Q;
+            prev(P) = prev(Q);
+            next(prev(Q)) = P;
+            prev(Q) = P;
         }
     }
 }
