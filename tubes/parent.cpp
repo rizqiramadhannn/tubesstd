@@ -43,42 +43,66 @@ void insertKota(List_p &L){
             prev(Q) = P;
         }
     }
+    cout << endl;
 }
 
-void deleteFirst(List_p &L, address_p &P){
-    if (first(L) != NULL ){
-        P = first(L);
-        first(L) = next(P);
-
-        next(P) = NULL;
+void deleteKota(List_p &L){
+    if(first(L) == NULL){
+        cout << "Tidak ada data" << endl;
+    } else {
+        printInfo(L);
+        string hapus;
+        cout << "Masukkan nama kota yang akan dihapus : ";
+        cin >> hapus;
+        address_p P;
+        if (info(first(L)) == hapus){
+            P = first(L);
+            if(first(L) == last(L)){
+                first(L) = NULL;
+                last(L) = NULL;
+            } else {
+                first(L) = next(P);
+                next(last(L)) = first(L);
+                prev(first(L)) = last(L);
+                prev(P) = NULL;
+                next(P) = NULL;
+            }
+        } else {
+            address_p Q = first(L);
+            do {
+                Q = next(Q);
+            } while (Q != first(L) && info(next(Q)) != hapus);
+            if (Q == first(L)){
+                cout << "Nama kota tidak ada dalam data" << endl;
+                cout << "Kembali ke menu" << endl;
+            } else if (Q == last(L)){
+                P = last(L);
+                last(L) = prev(P);
+                next(last(L)) = first(L);
+                prev(first(L)) = last(L);
+                next(P) = NULL;
+                prev(P) = NULL;
+            } else {
+                P = next(Q);
+                next(Q) = next(P);
+                prev(next(Q)) = Q;
+                next(P) = NULL;
+                prev(P) = NULL;
+            }
+        }
     }
-}
-void deleteLast(List_p &L, address_p &P){
-    address_p Q;
-    if (first(L) == NULL){
-        cout<<"Empty"<<endl;
-    } else if(next(first(L)) == NULL){
-       P =first(L);
-       first(L) = NULL;
-    } Q = first(L);
-    while (next(next(Q)) != NULL){
-        Q = next(Q);
-    next(Q) = NULL;
-    }
-
-}
-
-void deleteAfter(List_p &L, address_p Prec, address_p P){
-    P = next(Prec);
-    next(Prec) = next(P);
-    next(P) = NULL;
 }
 
 void printInfo(List_p L){
     address_p p = first(L);
-    do{
-        cout<<info(p)<<", ";
-        p = next(p);
-    }while(p != first(L));
-    cout<<endl;
+    if (p == NULL){
+        cout << "Daftar kota kosong" << endl;
+    } else {
+        cout << "Daftar kota : ";
+        do{
+            cout<<info(p)<<", ";
+            p = next(p);
+        }while(p != first(L));
+        cout << endl;
+    }
 }
