@@ -22,7 +22,7 @@ void insertJalan(List_c &L){
     if (first(L) == NULL){
         first(L) = P;
         next(P) = P;
-    } else if {
+    } else if (next(first(L)) == NULL) {
         address_c Q = first(L);
         if (x < info(first(L))){
             next(P) = first(L);
