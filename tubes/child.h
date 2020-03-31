@@ -24,6 +24,7 @@ void insertJalan(List_c &L);
 void insertFirst(List_c &L, address_c P);
 void insertLast(List_c &L, address_c P);
 void insertAfter(List_c &L, address_c Prec, address_c P);
+void deleteJalan(List_c &L, address_c &P)
 void deleteFirst(List_c &L, address_c &P);
 void deleteLast(List_c &L, address_c &P);
 void deleteAfter(List_c &L, address_c Prec, address_c P);
