@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1585567971 source:c:\users\u53r\documents\github\tubesstd\tubes\main.cpp
+	"parent.h"
+	"child.h"
+
+1585565686 source:c:\users\u53r\documents\github\tubesstd\tubes\child.cpp
+	"child.h"
+
+1585565687 c:\users\u53r\documents\github\tubesstd\tubes\child.h
+	<iostream>
+
+1585568818 source:c:\users\u53r\documents\github\tubesstd\tubes\parent.cpp
+	"parent.h"
+
+1585567703 c:\users\u53r\documents\github\tubesstd\tubes\parent.h
+	<iostream>
+
