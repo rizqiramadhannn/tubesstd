@@ -20,6 +20,7 @@ struct List_c{
 
 address_c allocate(infotype_c x);
 void createList(List_c &L);
+void insertJalan(List_c &L);
 void insertFirst(List_c &L, address_c P);
 void insertLast(List_c &L, address_c P);
 void insertAfter(List_c &L, address_c Prec, address_c P);

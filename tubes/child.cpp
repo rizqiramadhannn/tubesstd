@@ -12,6 +12,31 @@ void createList(List_c &L){
     first(L) = NULL;
 }
 
+void insertJalan(List_c &L){
+    infotype_c x;
+    cout << "Masukkan nama jalan : ";
+    cin >> x;
+    address_c P = new elmList_c;
+    info(P) = x;
+    next(P) = NULL;
+    if (first(L) == NULL){
+        first(L) = P;
+        next(P) = P;
+    } else if {
+        address_c Q = first(L);
+        if (x < info(first(L))){
+            next(P) = first(L);
+            first(L) = P;
+        }else {
+            Q = first(L);
+            while (x > info(Q)){
+                Q = next(Q);
+            }
+            next(P) = Q;
+        }
+    }
+}
+
 void insertFirst(List_c &L, address_c P){
     next(P) = first(L);
     first(L) = P;
