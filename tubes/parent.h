@@ -24,6 +24,7 @@ struct List_p{
 
 void insertKota(List_p &L);
 void createList(List_p &P);
+void deleteKota(List_p &L);
 void deleteFirst(List_p &L, address_p &P);
 void deleteLast(List_p &L, address_p &P);
 void deleteAfter(List_p &L, address_p Prec, address_p P);
