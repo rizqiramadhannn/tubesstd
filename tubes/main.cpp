@@ -3,13 +3,13 @@
 
 int main()
 {
-    List_p Kota;
-    createList(Kota);
-    insertKota(Kota);
-    insertKota(Kota);
-    printInfo(Kota);
-    insertKota(Kota);
-    printInfo(Kota);
-    insertKota(Kota);
-    printInfo(Kota);
+    List_c Jalan;
+    createList(Jalan);
+    insertJalan(Jalan);
+    insertJalan(Jalan);
+    printInfo(Jalan);
+    deleteJalan(Jalan);
+    printInfo(Jalan);
+    deleteJalan(Jalan);
+    printInfo(Jalan);
 }
