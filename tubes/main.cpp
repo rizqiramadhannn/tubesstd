@@ -1,8 +1,12 @@
 #include "parent.h"
 #include "child.h"
-
+#include "relasi.h"
+#include<cstring>
 int main()
 {
+    address_p P;
+    address_c Q;
+    infotype_c x, y;
     List_p Kota;
     createList(Kota);
     string input;
@@ -25,19 +29,46 @@ int main()
         if (input == "1"){
             insertKota(Kota);
         } else if (input == "2"){
-            cout << "Belum kelarrr" << endl;
+            do{
+                printKota(Kota);
+                cout << "Masukkan nama kota : ";
+                cin >> x;
+                P = cariKota(Kota, x);
+                if (P == NULL){
+                    cout << "Kota tidak ditemukan" << endl;
+                }
+            } while (P == NULL);
+            cout << "Masukkan nama jalan : ";
+            cin >> x;
+            cout << "Masukkan tipe jalan : ";
+            cin >> y;
+            insertJalan(child(P), x, y);
         } else if (input == "3"){
             cout << "Belum kelarrr" << endl;
         } else if (input == "4"){
             deleteKota(Kota);
         } else if (input == "5"){
-            cout << "Belum kelarrr" << endl;
+            do{
+                printKota(Kota);
+                cout << "Masukkan nama kota : ";
+                cin >> x;
+                P = cariKota(Kota, x);
+                if (P == NULL){
+                    cout << "Kota tidak ditemukan" << endl;
+                }
+            } while (P == NULL);
+            printInfo(child(P));
+            deleteJalan(child(P), Q);
         } else if (input == "6"){
-            printInfo(Kota);
+            printAll(Kota);
         } else if (input == "7"){
             cout << "Belum kelarrr" << endl;
         } else if (input == "8"){
-            cout << "Belum kelarrr" << endl;
+            printKota(Kota);
+            cout << "Masukkan nama kota : ";
+            cin >> x;
+            P = cariKota(Kota, x);
+            printInfo(child(P));
         } else if (input == "9"){
             cout << "Belum kelarrr" << endl;
         } else if (input != "0"){
