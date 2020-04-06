@@ -4,6 +4,7 @@
 #include<cstring>
 int main()
 {
+<<<<<<< HEAD
     address_p P;
     address_c Q;
     infotype_c x, y;
@@ -77,4 +78,15 @@ int main()
         cout << "---------------------------" << endl;
         cout << endl;
     }
+=======
+    List_c Jalan;
+    createList(Jalan);
+    insertJalan(Jalan);
+    insertJalan(Jalan);
+    printInfo(Jalan);
+    deleteJalan(Jalan);
+    printInfo(Jalan);
+    deleteJalan(Jalan);
+    printInfo(Jalan);
+>>>>>>> f623d086b29cd5fbc9ba275bf9a21131f36e8a99
 }
