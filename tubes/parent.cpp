@@ -13,6 +13,7 @@ void insertKota(List_p &L){
     info(P) = x;
     next(P) = NULL;
     prev(P) = NULL;
+    createList(child(P));
     if (first(L) == NULL){
         first(L) = P;
         last(L) = P;
@@ -50,7 +51,7 @@ void deleteKota(List_p &L){
     if(first(L) == NULL){
         cout << "Tidak ada data" << endl;
     } else {
-        printInfo(L);
+        printKota(L);
         string hapus;
         cout << "Masukkan nama kota yang akan dihapus : ";
         cin >> hapus;
@@ -93,16 +94,42 @@ void deleteKota(List_p &L){
     }
 }
 
-void printInfo(List_p L){
+void printAll(List_p L){
     address_p p = first(L);
     if (p == NULL){
         cout << "Daftar kota kosong" << endl;
     } else {
-        cout << "Daftar kota : ";
+        cout << "Daftar kota : " << endl;
+        do{
+            cout<<info(p)<<", ";
+            printInfo(child(p));
+            p = next(p);
+        }while(p != first(L));
+        cout << endl;
+    }
+}
+
+void printKota(List_p L){
+    address_p p = first(L);
+    if (p == NULL){
+        cout << "Daftar kota kosong" << endl;
+    } else {
+        cout << "Daftar kota : " << endl;
         do{
             cout<<info(p)<<", ";
             p = next(p);
         }while(p != first(L));
         cout << endl;
     }
+}
+
+address_p cariKota(List_p L, string key){
+    address_p P = first(L);
+    if (info(P) != key){
+        do {
+            P = next(P);
+        } while (P != first(L) && info(P) != key);
+        P = NULL;
+    }
+    return P;
 }
