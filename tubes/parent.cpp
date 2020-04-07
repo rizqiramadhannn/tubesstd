@@ -128,6 +128,9 @@ address_p cariKota(List_p L, string key){
     if (info(P) != key){
         do {
             P = next(P);
+            if (info(P) == key){
+                return P;
+            }
         } while (P != first(L) && info(P) != key);
         P = NULL;
     }
