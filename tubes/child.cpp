@@ -1,5 +1,4 @@
 #include "child.h"
-#include "relasi.h"
 
 void createList(List_c &L){
     first(L) = NULL;
