@@ -29,21 +29,6 @@ int main()
         if (input == "1"){
             insertKota(Kota);
         } else if (input == "2"){
-            cout << "Belum kelarrr" << endl;
-        } else if (input == "3"){
-            cout << "Belum kelarrr" << endl;
-        } else if (input == "4"){
-            deleteKota(Kota);
-        } else if (input == "5"){
-            cout << "Belum kelarrr" << endl;
-        } else if (input == "6"){
-            printInfo(Kota);
-        } else if (input == "7"){
-            cout << "Belum kelarrr" << endl;
-        } else if (input == "8"){
-            cout << "Belum kelarrr" << endl;
-        } else if (input == "9"){
-            cout << "Belum kelarrr" << endl;
             do{
                 printKota(Kota);
                 cout << "Masukkan nama kota : ";
@@ -97,7 +82,6 @@ int main()
             }
         } else if (input == "8"){
              cout << "Belum kelarrr" << endl;
-
         } else if (input != "0"){
             cout << "Input salah/menu tidak tersedia" << endl;
         }
