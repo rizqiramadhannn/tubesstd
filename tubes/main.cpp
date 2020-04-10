@@ -1,6 +1,5 @@
 #include "parent.h"
 #include "child.h"
-#include "relasi.h"
 #include<cstring>
 int main()
 {
@@ -81,7 +80,7 @@ int main()
                 printInfo(child(P));
             }
         } else if (input == "8"){
-             cout << "Belum kelarrr" << endl;
+             tipeJalan(Jalan);
         } else if (input != "0"){
             cout << "Input salah/menu tidak tersedia" << endl;
         }
