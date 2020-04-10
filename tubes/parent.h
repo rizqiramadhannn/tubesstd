@@ -1,11 +1,14 @@
 #ifndef PARENT_H_INCLUDED
 #define PARENT_H_INCLUDED
 #include <iostream>
+#include <cstring>
+#include "child.h"
 #define first(L) L.first
 #define last(L) L.last
 #define next(P) P->next
 #define prev(P) P->prev
 #define info(P) P->info
+#define child(P) P->child
 using namespace std;
 
 typedef string infotype_p;
@@ -15,6 +18,7 @@ struct elmList_p{
     infotype_p info;
     address_p next;
     address_p prev;
+    List_c child;
 };
 
 struct List_p{
@@ -25,10 +29,9 @@ struct List_p{
 void insertKota(List_p &L);
 void createList(List_p &P);
 void deleteKota(List_p &L);
-void deleteFirst(List_p &L, address_p &P);
-void deleteLast(List_p &L, address_p &P);
-void deleteAfter(List_p &L, address_p Prec, address_p P);
-void printInfo(List_p L);
-
+void printAll(List_p L);
+void printKota(List_p L);
+address_p cariKota(List_p L, string key);
+void tipeJalan(List_c L);
 
 #endif // PARENT_H_INCLUDED
